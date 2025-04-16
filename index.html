@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>今回司会・書記を担当したメンバーは除きましょう。</h1>
+        
+        <div class="flex-container">
+            <div class="left-panel">
+                <div class="member-container">
+                    <ul class="member-list" id="memberList">
+                        <!-- メンバーリストがここに表示されます -->
+                    </ul>
+                    
+                    <div class="add-member-form">
+                        <input type="text" id="newMember" placeholder="add member" onkeypress="handleKeyPress(event)">
+                        <button class="add-button" onclick="addMember()"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <button class="run-button" id="runButton"><i class="fa-solid fa-play"></i> 実行</button>
+                
+                <div class="result-container" id="resultArea">
+                    <!-- 結果がここに表示されます -->
+                </div>
+                
+                <button class="copy-button" id="copyButton" style="display: none;">
+                    <span><i class="fa-solid fa-copy"></i></span> コピー
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

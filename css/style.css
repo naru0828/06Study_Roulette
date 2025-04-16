@@ -1,0 +1,128 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+    margin-bottom: 21px;
+    text-align: center;
+}
+
+.member-container {
+    margin-bottom: 20px;
+}
+.member-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.member-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+.member-name {
+    color: #333;
+    font-weight: bold;
+}
+.delete-button {
+    color: #f44336;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 10px;
+}
+.add-member-form {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.add-member-form input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.add-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.run-button {
+    background-color: white;
+    color: #333;
+    border: 2px solid #FFC107;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.copy-button {
+    background-color: white;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.result-container {
+    margin-top: 20px;
+    text-align: left;
+}
+.result-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.result-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.flex-container {
+    display: flex;
+    gap: 20px;
+}
+.left-panel {
+    flex: 1;
+}
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
