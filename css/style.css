@@ -57,9 +57,9 @@ h1 {
     margin-right: 10px;
 }
 .add-button {
-    background-color: #2196F3;
-    color: white;
-    border: none;
+    background-color: white;
+    color: #2196f3;
+    border: 2px solid #2196F3;
     border-radius: 50%;
     width: 36px;
     height: 36px;
