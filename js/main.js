@@ -110,3 +110,81 @@ function copyResults() {
             alert('コピーに失敗しました');
         });
     }
+
+function addAgendaItem(title = '', details = ['']) {
+    const agendaList = document.getElementById('agendaList');
+    
+    const agendaItem = document.createElement('div');
+    agendaItem.className = 'agenda-item';
+    
+    const detailLines = details.map(detail => `
+        <div class="detail-line">
+            <input type="text" class="agenda-detail" placeholder="詳細内容" value="${detail}">
+            <button onclick="this.parentElement.remove()">✕</button>
+        </div>
+    `).join('');
+    
+    agendaItem.innerHTML = `
+        <input type="text" class="agenda-title" placeholder="議題タイトル" value="${title}">
+        <div class="detail-container">
+            ${detailLines}
+        </div>
+        <button onclick="addDetailLine(this)"><i class="fa-solid fa-plus"></i>行を追加</button>
+        <button class="delete-button" onclick="this.parentElement.remove()"><i class="fa-solid fa-trash-can"></i> 議題削除</button>
+    `;
+    
+    agendaList.appendChild(agendaItem);
+}
+    
+function addDetailLine(button) {
+    const container = button.previousElementSibling; // .detail-container
+    const newLine = document.createElement('div');
+    newLine.className = 'detail-line';
+    newLine.innerHTML = `
+        <input type="text" class="agenda-detail" placeholder="詳細内容">
+        <button onclick="this.parentElement.remove()"><i class="fa-solid fa-xmark"></i></button>
+    `;
+    container.appendChild(newLine);
+}
+    
+
+function generateFormattedMinutes() {
+    const date = document.getElementById('meetingDate').value.trim();
+    const title = document.getElementById('meetingTitle').value.trim();
+    const chairman = document.getElementById('chairmanName').value.trim();
+    const secretary = document.getElementById('secretaryName').value.trim();
+    
+    const agendaItems = document.querySelectorAll('.agenda-item');
+    let formattedAgenda = '';
+    agendaItems.forEach((item, index) => {
+        const heading = item.querySelector('.agenda-title').value.trim();
+        const details = item.querySelectorAll('.agenda-detail');
+        const detailLines = Array.from(details)
+            .map(d => d.value.trim())
+            .filter(line => line !== '');
+
+        formattedAgenda += `${index + 1}. ${heading}\n`;
+        
+        detailLines.forEach((line, i) => {
+            const letter = String.fromCharCode(97 + i); // 97は 'a'
+            formattedAgenda += `　${letter}. ${line}\n`;
+        });
+        
+        formattedAgenda += `\n`;
+    });
+    
+    const formatted = `${date}　${title}
+司会 : ${chairman}
+書記 : ${secretary}
+
+${formattedAgenda}`;
+
+    document.getElementById('formattedOutput').value = formatted;
+}
+    
+function copyFormattedMinutes() {
+    const text = document.getElementById('formattedOutput').value;
+    navigator.clipboard.writeText(text)
+        .then(() => alert('議事録をコピーしました！'))
+        .catch(err => alert('コピーに失敗しました: ' + err));
+}

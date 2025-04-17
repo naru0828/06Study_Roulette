@@ -1,8 +1,8 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 h1 {
     color: #333;
@@ -125,4 +125,70 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+.minute-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.minute-form input,
+.minute-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#formattedOutput {
+    height: 180px;
+    background-color: #f9f9f9;
+    font-family: monospace;
+}
+
+.minute-form {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.agenda-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.agenda-title,
+.agenda-detail {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+textarea#formattedOutput {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.detail-line {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0;
+}
+.detail-line input {
+    flex: 1;
 }

@@ -37,7 +37,35 @@
                     <span><i class="fa-solid fa-copy"></i></span> コピー
                 </button>
             </div>
-        </div>
+    </div>
+    <div class="minute-form">
+        <h2>議事録作成</h2>
+            <div>
+                <label for="date">日付</label>
+                <input type="date" id="meetingDate">
+            </div>
+            <div>
+                <label for="title">タイトル</label>
+                <input type="text" id="meetingTitle" placeholder="例: 全体共有MTG">
+            </div>
+            <div>
+                <label for="chairmanName">司会の名前</label>
+                <input type="text" id="chairmanName">
+            </div>
+            <div>
+                <label for="secretaryName">書記の名前</label>
+                <input type="text" id="secretaryName">
+            </div>
+            <div class="agenda-section">
+                <p>議題</p>
+                <div id="agendaList">
+                    <!-- ここに議題ブロックが追加される -->
+                </div>
+                <button onclick="addAgendaItem()"><i class="fa-solid fa-plus"></i>議題を追加</button>
+            </div>
+        <button onclick="generateFormattedMinutes()">議事録を整形して表示</button>
+        <textarea id="formattedOutput" readonly></textarea>
+        <button onclick="copyFormattedMinutes()">コピー</button>
     </div>
 </body>
 </html>
